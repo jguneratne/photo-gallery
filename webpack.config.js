@@ -100,17 +100,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|webp)$/,
+        test: /\.(png|jpe?g|ico|svg)$/,
         type: "asset/resource",
-        use: {
-          loader: "responsive-loader",
-          options: {
-            // output filename of images, e.g. dist/assets/img/image-640w.png
-            name: "./assets/imgs/[name]-[width]w.[ext]",
-            sizes: [1400], // max. image size, if 'size' query is not used
-          },
+        generator: {
+          filename: "assets/img/[name].[hash:8][ext]",
         },
       },
+
       // {
       //   test: /[\\/]images|node_modules[\\/].+(png|jpe?g|webp|ico|svg)$/i,
       //   type: "asset/resource",
@@ -129,6 +125,19 @@ module.exports = {
       //     },
       //   },
       // },
+
+      {
+        test: /\.(png|jpe?g|webp)$/,
+        type: "asset/resource",
+        use: {
+          loader: "responsive-loader",
+          options: {
+            // output filename of images, e.g. dist/assets/img/image-640w.png
+            name: "./assets/imgs/[name]-[width]w.[ext]",
+            sizes: [1400], // max. image size, if 'size' query is not used
+          },
+        },
+      },
     ],
   },
 
