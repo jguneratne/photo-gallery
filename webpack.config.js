@@ -110,28 +110,25 @@ module.exports = {
             sizes: [1400], // max. image size, if 'size' query is not used
           },
         },
-        generator: {
-          filename: ({ filename }) => {
-            // Keep directory structure for images in dist folder
-            const srcPath =
-              "src/assets/imgs" ||
-              "src/assets/imgs/about-page" ||
-              "src/assets/imgs/birds-gal" ||
-              "src/assets/imgs/home-imgs" ||
-              "src/assets/imgs/insects-gal" ||
-              "src/assets/imgs/small-animals-gal" ||
-              "src/assets/imgs/thumbnails";
-            const regExp = new RegExp(
-              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
-            );
-            const assetPath = path.dirname(
-              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/")
-            );
-
-            return `images/${assetPath}/[name].[hash:8][ext]`;
-          },
-        },
       },
+      // {
+      //   test: /[\\/]images|node_modules[\\/].+(png|jpe?g|webp|ico|svg)$/i,
+      //   type: "asset/resource",
+      //   generator: {
+      //     // keep original directory structure
+      //     filename: ({ filename }) => {
+      //       const srcPath = "src/assets/imgs";
+      //       const regExp = new RegExp(
+      //         `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
+      //       );
+      //       const assetPath = path.dirname(
+      //         regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/")
+      //       );
+
+      //       return `imgs/${assetPath}/[name].[hash:8][ext]`;
+      //     },
+      //   },
+      // },
     ],
   },
 
