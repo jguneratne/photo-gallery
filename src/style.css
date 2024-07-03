@@ -547,7 +547,7 @@ h2 {
   justify-items: center;
 }
 
-.photo-box picture {
+.photo-box .picture {
   vertical-align: middle; /* Removes padding added to picture at bottom */
   grid-area: 1 / 1 / 2 / 2;
   transition: visibility 0s 500ms, opacity 500ms linear;
