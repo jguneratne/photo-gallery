@@ -106,7 +106,7 @@ module.exports = {
           loader: "responsive-loader",
           options: {
             // output filename of images, e.g. dist/assets/img/image-640w.png
-            name: "assets/img/[name]-[width]w.[ext]",
+            name: "./assets/imgs/[name]-[width]w.[ext]",
             sizes: [1400], // max. image size, if 'size' query is not used
           },
         },
