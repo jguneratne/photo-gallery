@@ -284,7 +284,7 @@ h2 {
 
 .home {
   min-height: 100%;
-  background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-horizontal-1200p.jpg);
+  background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-horizontal-1200p.c92a2376.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -717,7 +717,7 @@ textarea::placeholder {
 
 .about {
   min-height: 100%;
-  background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-horizontal-1200p.jpg);
+  background-image: url(../images/about-page/Guneratne_2023.10.01_about-horizontal-1200p.ec3fa9da.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -812,7 +812,7 @@ textarea::placeholder {
   }
 
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-vertical-800p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-vertical-800p.79a64072.jpg);
     display: grid;
   }
 
@@ -871,7 +871,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-vertical-800p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-vertical-800p.5c987064.jpg);
     grid-template-columns: none;
     grid-template-rows: repeat(2, 1fr);
   }
@@ -939,7 +939,7 @@ textarea::placeholder {
   }
 
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-vertical-870p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-vertical-870p.71086402.jpg);
     display: grid;
   }
 
@@ -972,7 +972,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-vertical-870p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-vertical-870p.b855e239.jpg);
   }
 }
 
@@ -982,7 +982,7 @@ textarea::placeholder {
   }
 
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-vertical-1200p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-vertical-1200p.7b09b58e.jpg);
     display: grid;
   }
 
@@ -1028,7 +1028,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-vertical-1200p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-vertical-1200p.80f2cce9.jpg);
 
     grid-template-columns: none;
     grid-template-rows: repeat(2, 1fr);
@@ -1050,7 +1050,7 @@ textarea::placeholder {
 
 @media (max-width: 1280px) and (orientation: landscape) {
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-horizontal-1200p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-horizontal-1200p.c92a2376.jpg);
   }
 
   .home-box {
@@ -1064,7 +1064,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-horizontal-1200p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-horizontal-1200p.ec3fa9da.jpg);
   }
 
   .about-text-div {
@@ -1134,7 +1134,7 @@ textarea::placeholder {
   }
 
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-horizontal-800p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-horizontal-800p.339e5e5a.jpg);
   }
 
   .home-box {
@@ -1150,7 +1150,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-horizontal-800p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-horizontal-800p.ce9b62b9.jpg);
   }
 
   .about-text-div {
@@ -1169,7 +1169,7 @@ textarea::placeholder {
 
 @media (min-width: 1800px) and (orientation: landscape) {
   .home {
-    background-image: url(../src/assets/imgs/home-imgs/Guneratne_2024.06.09_home-horizontal-1600p.jpg);
+    background-image: url(../images/home-imgs/Guneratne_2024.06.09_home-horizontal-1600p.12dca9ab.jpg);
   }
 
   .home-box {
@@ -1206,7 +1206,7 @@ textarea::placeholder {
   }
 
   .about {
-    background-image: url(../src/assets/imgs/about-page/Guneratne_2023.10.01_about-horizontal-1600p.jpg);
+    background-image: url(../images/about-page/Guneratne_2023.10.01_about-horizontal-1600p.a59cf145.jpg);
   }
 
   .about-text-div {
@@ -1316,3 +1316,5 @@ textarea::placeholder {
     -webkit-animation: none;
   }
 }
+
+/*# sourceMappingURL=style.69ce3c7a.css.map*/
