@@ -2,153 +2,179 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Removed initial-scale and max-width from content attribute to fix zooming problems on mobile -->
     <title>Bosco Images Wildlife Photography: Photo Galleries</title>
-    <link href="css/style.69ce3c7a.css" rel="stylesheet" />
-    <script src="js/index.836ef08d.js" defer="defer"></script>
+    <link href="css/style.2c890db5.css" rel="stylesheet" />
+    <script src="js/index.513cb772.js" defer="defer"></script>
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
+    <div class="scroll-wrapper">
+      <main class="main">
+        <header class="header">
   <nav>
-    <ul class="menu-items" id="tabs">
-      <li class="menu-btn hov-style" data-name="index">
-        <a aria-label="Home Page" aria-current="page" href="index.html">Home</a>
+    <button class="menu-icon-div">
+      <img
+        class="menu-icon"
+        src="images/icons/menu-symbol-of-three-parallel-lines-svgrepo-com.b45ba31c.svg"
+        alt="Menu Button: Click to expand menu options"
+      />
+    </button>
+
+    <ul role="menubar" class="menu-items" id="tabs">
+      <li role="menuitem" class="menu-btn home-link" data-name="index">
+        <a
+          aria-label="Home Page"
+          class="menu-link"
+          data-name="index"
+          href="index.html"
+          >Home</a
+        >
       </li>
 
-      <div
-        class="dropdown-div menu-btn gal-hov dropdown-btn"
+      <li
+        role="menuitem"
+        class="dropdown-div menu-btn gals-link"
         data-name="galleries"
-        title="Galleries"
       >
-        <div class="gal-btn-div">
-          <li aria-label="Click to Open Submenu">
-            <a class="gals-link" href="#galleries">Galleries</a>
-          </li>
-
-          <div class="gal-arrow"></div>
-        </div>
-
-        <ul class="dropdown-content">
+        <a
+          aria-label="Galleries: Click to Open Submenu"
+          class="menu-link"
+          data-name="galleries"
+          href="#"
+          >Galleries <span class="gal-arrow"></span
+        ></a>
+        <ul role="menu" class="dropdown-content">
           <li
-            class="dropdown-item birds"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 1"
             data-name="birds-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="birds-gallery.html">Birds</a>
+            <a aria-label="Birds Gallery" href="birds-gallery.html">Birds</a>
           </li>
           <li
-            class="dropdown-item insects"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 2"
             data-name="insects-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="insects-gallery.html">Insects</a>
+            <a aria-label="Insects Gallery" href="insects-gallery.html"
+              >Insects</a
+            >
           </li>
           <li
-            class="dropdown-item small-animals"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 3"
             data-name="small-animals-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="small-animals-gallery.html">Small Animals</a>
+            <a
+              aria-label="Small Animals Gallery"
+              href="small-animals-gallery.html"
+              >Small Animals</a
+            >
           </li>
         </ul>
-      </div>
-
-      <li class="menu-btn hov-style" data-name="about">
-        <a aria-label="About Page" href="about.html">About</a>
       </li>
 
-      <li class="menu-btn hov-style" data-name="contact">
-        <a aria-label="Contact Page" href="contact.html">Contact</a>
+      <li role="menuitem" class="menu-btn about-link" data-name="about">
+        <a
+          aria-label="About Page"
+          class="menu-link"
+          data-name="about"
+          href="about.html"
+          >About</a
+        >
+      </li>
+
+      <li role="menuitem" class="menu-btn contact-link" data-name="contact">
+        <a
+          aria-label="Contact Page"
+          class="menu-link"
+          data-name="contact"
+          href="contact.html"
+          >Contact</a
+        >
       </li>
     </ul>
   </nav>
 </header>
 
-
-      <main class="main">
         <!-- GALLERIES -->
-        <section class="tab-content" id="galleries">
-          <div class="galleries">
-            <div class="thumbnails" role="region">
-              <a
-                href="../dist/birds-gallery.html"
-                class="thumbnail-link"
-                aria-label="Click to visit the birds image gallery."
-              >
-                <div class="thumbnail-box">
-                  <img
-                    class="thumbnail-img"
-                    src="images/thumbnails/Guneratne_2023.06.27_birds-gal-thumb.258a2301.jpg"
-                    alt="A bright red male cardinal on the right of the frame perched on a stick gazing toward the left of the frame, with an out-of-focus green background."
-                  />
-                  <p class="gal-title">Birds Gallery</p>
-                </div>
-              </a>
+        <section class="section" id="galleries">
+          <div class="thumbnails" role="region">
+            <a
+              href="../dist/birds-gallery.html"
+              class="thumbnail-link"
+              aria-label="Click to visit the birds image gallery."
+            >
+              <div class="thumbnail-box">
+                <img
+                  class="thumbnail-img"
+                  src="images/thumbnails/Guneratne_2023.06.27_birds-gal-thumb.258a2301.jpg"
+                  alt="A bright red male cardinal on the right of the frame perched on a stick gazing toward the left of the frame, with an out-of-focus green background."
+                />
+                <p class="gal-title">Birds Gallery</p>
+              </div>
+            </a>
 
-              <a
-                href="../dist/insects-gallery.html"
-                class="thumbnail-link"
-                aria-label="Click to visit the insects image gallery."
-              >
-                <div class="thumbnail-box">
-                  <img
-                    class="thumbnail-img"
-                    src="images/thumbnails/Guneratne_2023.09.05_insects-gal-thumb.07b917f6.jpg"
-                    alt="A close up of a swallowtail butterfly caterpillar, which
+            <a
+              href="../dist/insects-gallery.html"
+              class="thumbnail-link"
+              aria-label="Click to visit the insects image gallery."
+            >
+              <div class="thumbnail-box">
+                <img
+                  class="thumbnail-img"
+                  src="images/thumbnails/Guneratne_2023.09.05_insects-gal-thumb.07b917f6.jpg"
+                  alt="A close up of a swallowtail butterfly caterpillar, which
                   is green with black stripes, and yellow dots on every other
                   stripe. It is crawling along the branch of a dill plant,
                   feeding on the flower at the end."
-                  />
-                  <p class="gal-title">Insects Gallery</p>
-                </div>
-              </a>
+                />
+                <p class="gal-title">Insects Gallery</p>
+              </div>
+            </a>
 
-              <a
-                href="../dist/small-animals-gallery.html"
-                class="thumbnail-link"
-                aria-label="Click to visit the small animals image gallery."
-              >
-                <div class="thumbnail-box">
-                  <img
-                    class="thumbnail-img"
-                    src="images/thumbnails/Guneratne_2023.08.11_sm-anim-gal-thumb.1b1a30e7.jpg"
-                    alt="A closeup portrait of a rabbit that is sitting on the ground peering through long blades of grass, looking at the viewer, while also nibbling on the grass."
-                  />
-                  <p class="gal-title">Small Animals Gallery</p>
-                </div>
-              </a>
-            </div>
+            <a
+              href="../dist/small-animals-gallery.html"
+              class="thumbnail-link"
+              aria-label="Click to visit the small animals image gallery."
+            >
+              <div class="thumbnail-box">
+                <img
+                  class="thumbnail-img"
+                  src="images/thumbnails/Guneratne_2024.06.19_sm-anim-gal-thumb.77c0164d.jpg"
+                  alt="An old black drain pipe protrudes from the ground in the center of the frame, revealing the top of a chipmunk's head peeking up toward the right."
+                />
+                <p class="gal-title">Small Animals Gallery</p>
+              </div>
+            </a>
           </div>
         </section>
-      </main>
+        <footer class="footer-div">
+  <div class="copyright-div">
+    <p class="my-copyright">Jenn Guneratne © 2024</p>
+  </div>
 
-      <footer class="footer-div">
-  <div class="footer">
-    <div class="copyright-div">
-      <p class="my-copyright">Jenn Guneratne © 2024</p>
-    </div>
-
-    <div class="logo-div">
-      <a
-        href="https://github.com/jguneratne/photo-gallery"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="images/github-mark.6fa18895.svg"
-          alt="Octocat GitHub Logo: Click to visit GitHub repo for this site."
-          class="github-logo"
-        />
-      </a>
-    </div>
+  <div class="logo-div">
+    <a
+      href="https://github.com/jguneratne/photo-gallery"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="images/icons/github-mark.6fa18895.svg"
+        alt="GitHub Logo: Click to visit GitHub repository for this site."
+        class="github-logo"
+      />
+    </a>
   </div>
 </footer>
 
+      </main>
     </div>
   </body>
 </html>

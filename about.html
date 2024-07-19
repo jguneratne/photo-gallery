@@ -2,145 +2,164 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Removed initial-scale and max-width from content attribute to fix zooming problems on mobile -->
     <title>About: Bosco Images Wildlife Photography</title>
-    <link href="css/style.69ce3c7a.css" rel="stylesheet" />
-    <script src="js/index.836ef08d.js" defer="defer"></script>
+    <link href="css/style.2c890db5.css" rel="stylesheet" />
+    <script src="js/index.513cb772.js" defer="defer"></script>
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
+    <div class="scroll-wrapper">
+      <main class="main">
+        <header class="header">
   <nav>
-    <ul class="menu-items" id="tabs">
-      <li class="menu-btn hov-style" data-name="index">
-        <a aria-label="Home Page" aria-current="page" href="index.html">Home</a>
+    <button class="menu-icon-div">
+      <img
+        class="menu-icon"
+        src="images/icons/menu-symbol-of-three-parallel-lines-svgrepo-com.b45ba31c.svg"
+        alt="Menu Button: Click to expand menu options"
+      />
+    </button>
+
+    <ul role="menubar" class="menu-items" id="tabs">
+      <li role="menuitem" class="menu-btn home-link" data-name="index">
+        <a
+          aria-label="Home Page"
+          class="menu-link"
+          data-name="index"
+          href="index.html"
+          >Home</a
+        >
       </li>
 
-      <div
-        class="dropdown-div menu-btn gal-hov dropdown-btn"
+      <li
+        role="menuitem"
+        class="dropdown-div menu-btn gals-link"
         data-name="galleries"
-        title="Galleries"
       >
-        <div class="gal-btn-div">
-          <li aria-label="Click to Open Submenu">
-            <a class="gals-link" href="#galleries">Galleries</a>
-          </li>
-
-          <div class="gal-arrow"></div>
-        </div>
-
-        <ul class="dropdown-content">
+        <a
+          aria-label="Galleries: Click to Open Submenu"
+          class="menu-link"
+          data-name="galleries"
+          href="#"
+          >Galleries <span class="gal-arrow"></span
+        ></a>
+        <ul role="menu" class="dropdown-content">
           <li
-            class="dropdown-item birds"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 1"
             data-name="birds-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="birds-gallery.html">Birds</a>
+            <a aria-label="Birds Gallery" href="birds-gallery.html">Birds</a>
           </li>
           <li
-            class="dropdown-item insects"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 2"
             data-name="insects-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="insects-gallery.html">Insects</a>
+            <a aria-label="Insects Gallery" href="insects-gallery.html"
+              >Insects</a
+            >
           </li>
           <li
-            class="dropdown-item small-animals"
+            role="menuitem"
+            class="dropdown-item"
             style="--delay: 3"
             data-name="small-animals-gallery"
-            aria-label="Click to Visit Gallery"
           >
-            <a href="small-animals-gallery.html">Small Animals</a>
+            <a
+              aria-label="Small Animals Gallery"
+              href="small-animals-gallery.html"
+              >Small Animals</a
+            >
           </li>
         </ul>
-      </div>
-
-      <li class="menu-btn hov-style" data-name="about">
-        <a aria-label="About Page" href="about.html">About</a>
       </li>
 
-      <li class="menu-btn hov-style" data-name="contact">
-        <a aria-label="Contact Page" href="contact.html">Contact</a>
+      <li role="menuitem" class="menu-btn about-link" data-name="about">
+        <a
+          aria-label="About Page"
+          class="menu-link"
+          data-name="about"
+          href="about.html"
+          >About</a
+        >
+      </li>
+
+      <li role="menuitem" class="menu-btn contact-link" data-name="contact">
+        <a
+          aria-label="Contact Page"
+          class="menu-link"
+          data-name="contact"
+          href="contact.html"
+          >Contact</a
+        >
       </li>
     </ul>
   </nav>
 </header>
 
-
-      <main class="main">
         <!-- ABOUT -->
-        <section class="tab-content" id="about">
-          <div class="about">
-            <div class="about-text-div">
-              <div class="bosco-entry">
-                <p class="definition" aria-label="dictionary entry">
-                  <strong>bosco</strong> - noun [masculine] - wood, forest
-                </p>
-                <p
-                  class="definition"
-                  aria-label="dictionary example phrase, Italian to English translation"
-                >
-                  <em>gli animali del bosco:</em> forest animals
-                </p>
-                <p class="definition" aria-label="dictionary entry attribution">
-                  dictionary.cambridge.org - Italian to English Dictionary, June
-                  2024
-                </p>
-              </div>
-              <div class="about-box" aria-label="about text: 2 paragraphs">
-                <p class="about-text">
-                  Hi! I'm Jenn Guneratne, the New England-based photographer
-                  behind Bosco Images Wildlife Photography. I studied digital
-                  photography in the early 2010s, but wildlife photography
-                  didn't find me until more than a decade later. The journey
-                  began at the edge of the woods in my local area, capturing
-                  small animals, birds and insects.
-                </p>
-                <p class="about-text">
-                  I spend a lot of spare time during the warmer months outside,
-                  either working in my garden, or walking with my cat on his
-                  harness around the house. This allows for a lot of time to
-                  observe the wildlife that lives nearby, and a few of my
-                  current favorite shots can be attributed to my cat lazing in
-                  one place, allowing me time to quietly capture the nearby
-                  wildlife.
-                </p>
-                <p class="last-para">
-                  Each gallery here displays photos according to the orientation
-                  of your device: either landscape or portrait view. If you
-                  enjoy what you see, you can rotate the screen to see more.
-                </p>
-              </div>
+        <div class="about">
+          <div class="about-text-div">
+            <div class="bosco-entry">
+              <p class="definition" aria-label="dictionary entry">
+                <strong>bosco</strong> - noun [masculine] - wood, forest
+              </p>
+              <p
+                class="definition"
+                aria-label="dictionary example phrase, Italian to English translation"
+              >
+                <em>gli animali del bosco:</em> forest animals
+              </p>
+              <p class="definition" aria-label="dictionary entry attribution">
+                dictionary.cambridge.org - Italian to English Dictionary, June
+                2024
+              </p>
+            </div>
+            <div class="about-box" aria-label="about text: 2 paragraphs">
+              <p class="about-text">
+                Hi, I'm Jenn Guneratne, the New England-based photographer
+                behind Bosco Images Wildlife Photography. I studied digital
+                photography in the early 2010s, but wildlife photography didn't
+                find me until more than a decade later. The journey began at the
+                edge of the woods in my local area, capturing small animals,
+                birds and insects. I enjoy spending time outdoors, which allows
+                me to observe the abundant wildlife that lives nearby.
+              </p>
+
+              <p class="last-para">
+                Each gallery here displays photos according to the orientation
+                of your device: either landscape or portrait view. If you enjoy
+                what you see, you can rotate the screen to see more.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+        <footer class="footer-div">
+  <div class="copyright-div">
+    <p class="my-copyright">Jenn Guneratne © 2024</p>
+  </div>
 
-      <footer class="footer-div">
-  <div class="footer">
-    <div class="copyright-div">
-      <p class="my-copyright">Jenn Guneratne © 2024</p>
-    </div>
-
-    <div class="logo-div">
-      <a
-        href="https://github.com/jguneratne/photo-gallery"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="images/github-mark.6fa18895.svg"
-          alt="Octocat GitHub Logo: Click to visit GitHub repo for this site."
-          class="github-logo"
-        />
-      </a>
-    </div>
+  <div class="logo-div">
+    <a
+      href="https://github.com/jguneratne/photo-gallery"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="images/icons/github-mark.6fa18895.svg"
+        alt="GitHub Logo: Click to visit GitHub repository for this site."
+        class="github-logo"
+      />
+    </a>
   </div>
 </footer>
 
+      </main>
     </div>
   </body>
 </html>
