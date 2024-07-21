@@ -756,6 +756,8 @@ function clickCircles() {
       clearActiveState();
       handleIndexes();
       addActiveState();
+      clearInterval(_variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID);
+      _variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID = setInterval(slideRight, 3000);
     }
   });
 
@@ -783,6 +785,8 @@ function arrowCtrl() {
     ) {
       console.log("right");
       slideRight();
+      clearInterval(_variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID);
+      _variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID = setInterval(slideRight, 3000);
     }
     if (
       e.target === _variables__WEBPACK_IMPORTED_MODULE_0__.getLeftArrow.leftArrow ||
@@ -790,6 +794,8 @@ function arrowCtrl() {
     ) {
       console.log("left");
       slideLeft();
+      clearInterval(_variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID);
+      _variables__WEBPACK_IMPORTED_MODULE_0__.getAnimationID.animationID = setInterval(slideRight, 3000);
     }
   });
 
@@ -1506,4 +1512,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.513cb772.js.map
+//# sourceMappingURL=index.a82b2d96.js.map
