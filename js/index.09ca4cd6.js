@@ -112,6 +112,7 @@ function closeDropdown() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   removeError: () => (/* binding */ removeError),
 /* harmony export */   validateFormFields: () => (/* binding */ validateFormFields)
 /* harmony export */ });
 /* harmony import */ var _variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./variables */ "./src/variables.js");
@@ -119,6 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function validateFormFields() {
   if (_variables__WEBPACK_IMPORTED_MODULE_0__.shortPageName === "contact" && _variables__WEBPACK_IMPORTED_MODULE_0__.formFieldset.disabled) {
+    // Adjust styles to show form is disabled
     _variables__WEBPACK_IMPORTED_MODULE_0__.formDisabledText.style.display = "initial";
 
     _variables__WEBPACK_IMPORTED_MODULE_0__.inputFields.forEach((field) => {
@@ -132,6 +134,7 @@ function validateFormFields() {
     _variables__WEBPACK_IMPORTED_MODULE_0__.submitBtn.style.backgroundColor = "#edf0f0";
     _variables__WEBPACK_IMPORTED_MODULE_0__.submitBtn.style.pointerEvents = "none";
   } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.shortPageName === "contact" && !_variables__WEBPACK_IMPORTED_MODULE_0__.formFieldset.disabled) {
+    // Validate form fields if form is not diabled
     validateFirstNameInput();
     validateLastNameInput();
     validateEmailInput();
@@ -142,133 +145,88 @@ function validateFormFields() {
 
 // First Name Validation
 
-function validateFirstNameInput() {
-  _variables__WEBPACK_IMPORTED_MODULE_0__.firstName.addEventListener("blur", (e) => {
-    if (_variables__WEBPACK_IMPORTED_MODULE_0__.firstName.validity.valid) {
-      _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.textContent = "";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.style.visibility = "hidden";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.firstName.classList.remove("firstName--invalid");
-    } else {
-      showFirstNameError();
-    }
-  });
+function firstNameErrorFunc() {
+  if (_variables__WEBPACK_IMPORTED_MODULE_0__.firstName.validity.valueMissing) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.firstName, _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.textContent = "You need to enter your first name.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.firstName.validity.typeMismatch) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.firstName, _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.textContent = "Entered value needs to be a name.";
+  } else {
+    removeError(_variables__WEBPACK_IMPORTED_MODULE_0__.firstName, _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError);
+  }
 }
 
-function showFirstNameError() {
-  if (_variables__WEBPACK_IMPORTED_MODULE_0__.firstName.validity.valueMissing) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.textContent = "You need to enter your first name.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.setAttribute("aria-labelledby", "firstNameError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstName.classList.add("firstName--invalid");
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.firstName.validity.typeMismatch) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.textContent = "Entered value needs to be a name.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.setAttribute("aria-labelledby", "firstNameError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstNameError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.firstName.classList.add("firstName--invalid");
-  }
+function validateFirstNameInput() {
+  _variables__WEBPACK_IMPORTED_MODULE_0__.firstName.addEventListener("blur", (e) => {
+    firstNameErrorFunc();
+  });
 }
 
 // Last Name Validation
 
-function validateLastNameInput() {
-  _variables__WEBPACK_IMPORTED_MODULE_0__.lastName.addEventListener("blur", (e) => {
-    if (_variables__WEBPACK_IMPORTED_MODULE_0__.lastName.validity.valid) {
-      _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.textContent = "";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.style.visibility = "hidden";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.lastName.classList.remove("lastName--invalid");
-    } else {
-      showLastNameError();
-    }
-  });
+function lastNameErrorFunc() {
+  if (_variables__WEBPACK_IMPORTED_MODULE_0__.lastName.validity.valueMissing) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.lastName, _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.textContent = "You need to enter your first name.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.lastName.validity.typeMismatch) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.lastName, _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.textContent = "Entered value needs to be a name.";
+  } else {
+    removeError(_variables__WEBPACK_IMPORTED_MODULE_0__.lastName, _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError);
+  }
 }
 
-function showLastNameError() {
-  if (_variables__WEBPACK_IMPORTED_MODULE_0__.lastName.validity.valueMissing) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.textContent = "You need to enter your last name.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.setAttribute("aria-labelledby", "lastNameError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastName.classList.add("lastName--invalid");
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.lastName.validity.typeMismatch) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.textContent = "Entered value needs to be a name.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.setAttribute("aria-labelledby", "lastNameError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastNameError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.lastName.classList.add("lastName--invalid");
-  }
+function validateLastNameInput() {
+  _variables__WEBPACK_IMPORTED_MODULE_0__.lastName.addEventListener("blur", (e) => {
+    lastNameErrorFunc();
+  });
 }
 
 // Email Validation
 
-function validateEmailInput() {
-  _variables__WEBPACK_IMPORTED_MODULE_0__.email.addEventListener("blur", (e) => {
-    if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.valid) {
-      _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent = "";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.style.visibility = "hidden";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.email.classList.remove("emailField--invalid");
-    } else {
-      showEmailError();
-    }
-  });
+function emailErrorFunc() {
+  if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.valueMissing) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.email, _variables__WEBPACK_IMPORTED_MODULE_0__.emailError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent = "Please follow format: your-email@email.com.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.typeMismatch) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.email, _variables__WEBPACK_IMPORTED_MODULE_0__.emailError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent = "Please follow format: your-email@email.com.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.tooShort) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.email, _variables__WEBPACK_IMPORTED_MODULE_0__.emailError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent = `Email should be at least ${_variables__WEBPACK_IMPORTED_MODULE_0__.email.minLength} characters; you entered ${_variables__WEBPACK_IMPORTED_MODULE_0__.email.value.length}.`;
+  } else {
+    removeError(_variables__WEBPACK_IMPORTED_MODULE_0__.email, _variables__WEBPACK_IMPORTED_MODULE_0__.emailError);
+  }
 }
 
-function showEmailError() {
-  if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.valueMissing) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent =
-      "Email address must be in standard format: your-email@email.com.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.setAttribute("aria-labelledby", "emailError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.email.classList.add("emailField--invalid");
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.typeMismatch) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent =
-      "Email address must be in standard format: your-email@email.com.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.setAttribute("aria-labelledby", "emailError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.email.classList.add("emailField--invalid");
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.tooShort) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.textContent = `Email should be at least ${_variables__WEBPACK_IMPORTED_MODULE_0__.email.minLength} characters; you entered ${_variables__WEBPACK_IMPORTED_MODULE_0__.email.value.length}.`;
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.setAttribute("aria-labelledby", "emailError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.emailError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.email.classList.add("emailField--invalid");
-  }
+function validateEmailInput() {
+  _variables__WEBPACK_IMPORTED_MODULE_0__.email.addEventListener("blur", (e) => {
+    emailErrorFunc();
+  });
 }
 
 // Message Validation
 
-function validateMessageInput() {
-  _variables__WEBPACK_IMPORTED_MODULE_0__.message.addEventListener("blur", (e) => {
-    if (_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.valid) {
-      _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = "";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.style.visibility = "hidden";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.message.classList.remove("messageField--invalid");
-    } else {
-      showMessageError();
-    }
-  });
+function messageErrorFunc() {
+  if (_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.valueMissing) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.message, _variables__WEBPACK_IMPORTED_MODULE_0__.messageError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = "You must enter a message to submit this form.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.typeMismatch) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.message, _variables__WEBPACK_IMPORTED_MODULE_0__.messageError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = "You must enter a message to submit this form.";
+  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.tooShort) {
+    showError(_variables__WEBPACK_IMPORTED_MODULE_0__.message, _variables__WEBPACK_IMPORTED_MODULE_0__.messageError);
+    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = `Message should be at least ${_variables__WEBPACK_IMPORTED_MODULE_0__.message.minLength} characters; you entered ${_variables__WEBPACK_IMPORTED_MODULE_0__.message.value.length}.`;
+  } else {
+    removeError(_variables__WEBPACK_IMPORTED_MODULE_0__.message, _variables__WEBPACK_IMPORTED_MODULE_0__.messageError);
+  }
 }
 
-function showMessageError() {
-  if (_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.valueMissing) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = "You must enter a message to submit this form.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.setAttribute("aria-labelledby", "messageError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.message.classList.add("messageField--invalid");
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.typeMismatch) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = "You must enter a message to submit this form.";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.style.visibility = "visible";
-  } else if (_variables__WEBPACK_IMPORTED_MODULE_0__.email.validity.tooShort) {
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.textContent = `Message should be at least ${_variables__WEBPACK_IMPORTED_MODULE_0__.message.minLength} characters; you entered ${_variables__WEBPACK_IMPORTED_MODULE_0__.message.value.length}.`;
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.style.visibility = "visible";
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.setAttribute("aria-labelledby", "messageError");
-    _variables__WEBPACK_IMPORTED_MODULE_0__.messageError.focus();
-    _variables__WEBPACK_IMPORTED_MODULE_0__.message.classList.add("messageField--invalid");
-  }
+function validateMessageInput() {
+  _variables__WEBPACK_IMPORTED_MODULE_0__.message.addEventListener("blur", (e) => {
+    messageErrorFunc();
+  });
 }
 
 // All Fileds Submit Validation
@@ -282,19 +240,32 @@ function validateOnSubmit() {
       !_variables__WEBPACK_IMPORTED_MODULE_0__.message.validity.valid
     ) {
       e.preventDefault();
-      // showFirstNameError();
-      // showLastNameError();
-      // showEmailError();
-      // showMessageError();
+      firstNameErrorFunc();
+      lastNameErrorFunc();
+      emailErrorFunc();
+      messageErrorFunc();
 
-      _variables__WEBPACK_IMPORTED_MODULE_0__.submitError.textContent =
-        "This form cannot be submitted with errors. Please review all text fields";
       _variables__WEBPACK_IMPORTED_MODULE_0__.submitError.style.visibility = "visible";
-      _variables__WEBPACK_IMPORTED_MODULE_0__.submitError.setAttribute("aria-labelledby", "submitError");
-      _variables__WEBPACK_IMPORTED_MODULE_0__.submitError.focus();
-      submit.classList.add("submitField--invalid");
+      _variables__WEBPACK_IMPORTED_MODULE_0__.submitError.textContent = "Please complete all text fields.";
+    } else {
+      // Code to submit form
     }
   });
+}
+
+// Show/Remove Error Functions
+
+function removeError(inputEl, inputError) {
+  inputEl.classList.remove("input--invalid");
+  inputError.textContent = "";
+  inputError.style.visibility = "hidden";
+}
+
+function showError(inputEl, inputError) {
+  inputEl.classList.add("input--invalid");
+  inputError.style.visibility = "visible";
+  inputError.setAttribute("aria-live", "polite");
+  inputError.focus();
 }
 
 
@@ -1512,4 +1483,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=index.a82b2d96.js.map
+//# sourceMappingURL=index.09ca4cd6.js.map
